@@ -1,12 +1,13 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {Image, SafeAreaView, Text, View,StyleSheet,TextInput} from 'react-native';
+import {Image, SafeAreaView, Text, View,StyleSheet,TextInput,StatusBar} from 'react-native';
 
 const COLORS = {primary: '#062156', white: '#fff'};
 
 const ForgotPscreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.white}}>
+        <StatusBar barStyle = "dark-content" hidden = {false}  translucent = {true}/>
       <View>
         <TouchableOpacity onPress={()=> navigation.navigate('LoginScreen')} >
         <Image style={{marginTop:50, marginLeft:12}} source={require('../assets/close.png')} />

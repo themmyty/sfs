@@ -6,13 +6,15 @@ import { Feather } from '@expo/vector-icons';
 
 const COLORS = {primary: '#062156', white: '#fff'};
 
-const LoginSCreen = ({navigation}) => {
+const LoginScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.white}}>
       <StatusBar barStyle = "dark-content" hidden = {false}  translucent = {true}/>
       <View>
         <View>
+           <TouchableOpacity onPress={() => navigation.navigate('OnboardingScreen')} >
         <Image style={{marginTop:50, marginLeft:12}} source={require('../assets/close.png')} />
+        </TouchableOpacity>
         </View>
       <Text style={{color:COLORS.primary, marginLeft:20,fontSize:25}} >Log In</Text>
       <Text style={{color:COLORS.primary,fontSize:14,marginTop:5, marginLeft:20}} >Securely login to your SFS account</Text>
@@ -29,7 +31,7 @@ const LoginSCreen = ({navigation}) => {
                </TextInput>
                <Feather style={{alignSelf:'flex-end',position:'absolute',top:110,right:20}} name="eye" size={22} color="gray" />
                </View>
-               <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}
+               <TouchableOpacity onPress={() => navigation.navigate('NavTabWitIvst')}
                style = {styles.submitButton}>
                <Text style = {styles.submitButtonText}> LOGIN </Text>
             </TouchableOpacity>
@@ -39,7 +41,7 @@ const LoginSCreen = ({navigation}) => {
            
             </TouchableOpacity>
             <View>
-            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+            <TouchableOpacity onPress={() => navigation.navigate('HomeScreenWithIvst')}>
               <Image  style={{alignSelf:'center',marginTop:49}} source={require('../assets/Unlock.png')}/>
               </TouchableOpacity>
               <Text style={{alignSelf:'center',fontSize:12,color:'gray',marginTop:20}}>Or login with </Text>
@@ -50,7 +52,7 @@ const LoginSCreen = ({navigation}) => {
   );
 };
 
-export default LoginSCreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {

@@ -5,15 +5,15 @@ import Button from '../components/Button'
 
 const COLORS = {primary: '#062156', white: '#fff'};
 
-const RegisterScreen = (navigation) => {
+const RegisterScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.white}}>
        <ScrollView>
        <StatusBar barStyle = "dark-content" hidden = {false}  translucent = {true}/>
       <View>
-        <View>
+        <TouchableOpacity onPress ={() => navigation.navigate('OnboardingScreen')}>
         <Image style={{marginTop:50, marginLeft:16}} source={require('../assets/close.png')} />
-        </View>
+        </TouchableOpacity>
       <Text style={{color:COLORS.primary, marginLeft:16,fontSize:25}} >Create Account</Text>
          <Text style ={{color:COLORS.primary, marginLeft:16,fontSize:14,marginTop:5}}>Create a free account and start investing with SFS</Text>
          <View style = {styles.container}>
@@ -47,11 +47,11 @@ const RegisterScreen = (navigation) => {
                placeholderTextColor = "gray"
                autoCapitalize = "none"/>
                </View>
-               <TouchableOpacity onPress={()=>navigation.navigate('CreatePinScreen')}
+               <TouchableOpacity onPress={() =>navigation.navigate('CreatePinScreen')}
                style = {styles.submitButton}>
                <Text style = {styles.submitButtonText}> Continue</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')}>
+            <TouchableOpacity onPress={() =>navigation.navigate('LoginScreen')}>
                <Text style = {{alignSelf:'center',fontSize:14,color:COLORS.primary,marginTop:50}}> Already have an Account? Log in</Text>
             </TouchableOpacity>
             <Text style={{alignSelf:'center',fontSize:12,color:'gray',marginTop:20}}>Or Sign up with </Text>

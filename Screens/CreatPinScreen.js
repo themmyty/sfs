@@ -1,20 +1,21 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import {Image, SafeAreaView, Text, View,StyleSheet,TextInput} from 'react-native';
+import {Image, SafeAreaView, Text, View,StyleSheet,TextInput,StatusBar} from 'react-native';
 
 const COLORS = {primary: '#062156', white: '#fff'};
 
 const CreatePinScreen= ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor:COLORS.white}}>
+       <StatusBar barStyle = "dark-content" hidden = {false}  translucent = {true}/>
       <View>
-        <TouchableOpacity onPress={()=> navigation.navigate ('LoginScreen')} >
+        <TouchableOpacity onPress={()=> navigation.navigate ('RegisterScreen')} >
         <Image style={{marginTop:50, marginLeft:12}} source={require('../assets/close.png')} />
         </TouchableOpacity>
       <Text style={{color:COLORS.primary, marginLeft:16,fontSize:25,marginTop:30}} >Create your Pin</Text>
       <Text style ={{color:COLORS.primary, marginLeft:16,fontSize:14,marginTop:5}}> Create your PIN for Transactions</Text>
 
-               <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen') }
+               <TouchableOpacity onPress={()=> navigation.navigate ('NavigationTab')}
                style = {styles.submitButton}>
                <Text style = {styles.submitButtonText}> Continue</Text>
             </TouchableOpacity>
