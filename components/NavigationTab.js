@@ -45,6 +45,7 @@ const NavigationTab= () => {
                     left:0,
                     position:'absolute',
                     borderTopColor:0,
+                  
                     height:120,
                     backgroundColor:'#fff'
                 }
@@ -100,14 +101,19 @@ const NavigationTab= () => {
                         <View style={{alignItems:'center',justifyContent:'center'}}>
                           <Image source ={Investpng} resizeMode='contain'
                             style={{
-                                width:40,
-                                height:40,
+                                width:70,
+                                height:70,
                                 marginTop:5,
-                                tintColor: focused ? COLORS.green: COLORS.green
+                                borderColor:'gray',
+                                borderWidth:0.3,
+                                borderRadius:20,
+                                tintColor: focused ? COLORS.primary: COLORS.green,
+                               
+
                             }}
                           /> 
                           <Text 
-                          style={{color: focused ? COLORS.gray: COLORS.gray}}>Invest</Text> 
+                          style={{color: focused ? COLORS.gray: COLORS.gray,marginBottom:30}}>Invest</Text> 
                         </View>
                     )
                 }}
